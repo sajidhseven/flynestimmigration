@@ -569,10 +569,10 @@ export default function App() {
                 <div className="floating-hiring-card">
                   <div className="fhc-header">
                     <span className="fhc-pin">📍</span>
-                    <span className="fhc-label">Now Hiring In</span>
+                    <span className="fhc-label">NOW HIRING IN</span>
                   </div>
                   <div className="fhc-country-title">
-                    Netherlands <span className="fhc-flag">🇳🇱</span>
+                    Netherlands <span className="fhc-code">NL</span>
                   </div>
                   <div className="fhc-footer">
                     <div className="fhc-avatars">
