@@ -61,6 +61,25 @@ export default function App() {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // Lock body scroll when mobile menu or modals are open
+  useEffect(() => {
+    const isLocked = mobileMenuOpen || applyModalOpen || consultationModalOpen || jobsModalOpen;
+    if (isLocked) {
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none';
+    } else {
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+      document.body.style.touchAction = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+      document.body.style.touchAction = '';
+    };
+  }, [mobileMenuOpen, applyModalOpen, consultationModalOpen, jobsModalOpen]);
+
   // Autoplay service slides
   useEffect(() => {
     const timer = setInterval(() => {
